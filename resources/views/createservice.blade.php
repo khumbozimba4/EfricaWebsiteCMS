@@ -1,7 +1,7 @@
 @extends('layout')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/summernote-bs4.min.css">
 
-<!-- resources/views/users.blade.php -->
+<!-- resources/views/services.blade.php -->
 @section('content')
 <div class="container">
 
@@ -32,46 +32,38 @@
     <div class="row">
        
         <div class="col-md-9">
-            
-            <h2 class="mb-4">Create A Service</h2>
-    <!-- Add this code inside the <div id="content" class="p-4 p-md-5"> section -->
-
-            <form action="process_registration.php" method="post" enctype="multipart/form-data">
-                
-              <div class="col form-group">
-                <label >Title:</label>
-                 <input class="form-control" type="text" id="title" name="title" required><br><br>
-
-              </div>
-              <div  class="col form-group">
-                <!-- Bootstrap grid structure to create a layout -->
-                <label >Description:</label>
-                
-                <textarea  class="form-control"  id="summernote"></textarea>            
-              </div>
-             
-              <div class="col form-group">
-                <label >Upload Picture:</label>
-                <input type="file" class="form-control" name="file" id="file"  accept="image/*" required><br><br>
-              </div>
-              <div class="d-flex justify-content-end">
-                <input class="btn btn-primary" type="submit" value="Add">
-              </div>
-            </form>
-
+            <div class="card" style="background-color: rgb(255, 255, 255)">
+                <div class="card-body">
+                    <h4 class="card-header mb-4">Add new Service</h4>
+                    <!-- Add this code inside the card-body section -->
+                    <form action="addService" method="post" enctype="multipart/form-data">
+                        <div class="col form-group">
+                            <label>Title:</label>
+                            <input class="form-control" type="text" id="title" name="title" required>
+                        </div>
+                        <div class="col form-group">
+                            <label>Description:</label>
+                            <textarea class="form-control" id="summernote" name="description"></textarea>
+                        </div>
+                        <div class="col form-group">
+                            <label>Upload Picture:</label>
+                            <input type="file" class="form-control" name="file" id="file" accept="image/*" required>
+                        </div>
+                        <div class="d-flex justify-content-end">
+                            <input class="btn btn-primary" type="submit" value="save">
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 @endsection
 
 @section("scripts")
-
-  <script type="text/javascript">
-   $(document).ready(function() {
-  $('#summernote').summernote();
-});
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#summernote').summernote();
+    });
 </script>
 @endsection
-    
-
-

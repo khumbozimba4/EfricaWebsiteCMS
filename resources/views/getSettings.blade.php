@@ -1,6 +1,6 @@
 @extends('layout')
 
-<!-- resources/views/users.blade.php -->
+<!-- resources/views/settings.blade.php -->
 @section('content')
 <div class="container">
 
@@ -37,13 +37,22 @@
                     <tr>
                         <th>Key</th>
                         <th>Value</th>
+                        <th>Actions</th> <!-- Add a new column for actions -->
                     </tr>
                 </thead>
                 <tbody>
                     @foreach($settings as $setting)
                     <tr>
                         <td>{{ $setting['key'] }}</td>
-                        <td>{{ $settig['value'] }}</td>
+                        <td>{{ $setting['value'] }}</td>
+                        <td>
+                            <a href="{{ route('editSettings', ['key' => $setting['key']]) }}" class="btn btn-warning">Edit</a>
+                            <form action="{{ route('Users', ['key' => $setting['key']]) }}" method="POST" style="display: inline;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>

@@ -37,6 +37,7 @@
                     <tr>
                         <th>Name</th>
                         <th>Email</th>
+                        <th>Actions</th> <!-- Add a new column for actions -->
                     </tr>
                 </thead>
                 <tbody>
@@ -44,6 +45,14 @@
                     <tr>
                         <td>{{ $user['name'] }}</td>
                         <td>{{ $user['email'] }}</td>
+                        <td>
+                            <a href="{{ route('editUser', ['user' => $user['email']]) }}" class="btn btn-warning">Edit</a>
+                            <form action="{{ route('Users', ['user' => $user['email']]) }}" method="POST" style="display: inline;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>

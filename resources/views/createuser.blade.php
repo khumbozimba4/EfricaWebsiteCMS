@@ -32,45 +32,38 @@
     <div class="row">
        
         <div class="col-md-9">
-            
-            <h2 class="mb-4">Create User</h2>
-    <!-- Add this code inside the <div id="content" class="p-4 p-md-5"> section -->
-
-            <form action="process_registration.php" method="post" enctype="multipart/form-data">
-                
-              <div class="col form-group">
-                <label >Username:</label>
-                 <input class="form-control" type="text" id="name" name="name" required><br><br>
-
-              </div>
-              
-             
-              <div class="col form-group">
-                <label >Email:</label>
-                <input class="form-control" type="email" id="email" name="email" required><br><br>
-              </div>
-              <div class="col form-group">
-                <label >Password:</label>
-                <input type="password" class="form-control" name="password" id="password"  accept="image/*" required><br><br>
-              </div>
-              <div class="d-flex justify-content-end">
-                <input class="btn btn-primary" type="submit" value="Add User">
-              </div>
-            </form>
-
+            <div class="card" style="background-color: rgb(255, 255, 255)">
+                <div class="card-body">
+                    <h4 class="card-header mb-4">Add new User</h4>
+                    <!-- Add this code inside the card-body section -->
+                    <form action="addUser" method="post" enctype="multipart/form-data">
+                        <div class="col form-group">
+                            <label>Username:</label>
+                            <input class="form-control" type="text" id="name" name="name" required>
+                        </div>
+                        <div class="col form-group">
+                            <label>Email:</label>
+                            <input class="form-control" type="email" id="email" name="email" required>
+                        </div>
+                        <div class="col form-group">
+                            <label>Password:</label>
+                            <input type="password" class="form-control" name="password" id="password" accept="image/*" required>
+                        </div>
+                        <div class="d-flex justify-content-end">
+                            <input class="btn btn-primary" type="submit" value="save">
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 @endsection
 
 @section("scripts")
-
-  <script type="text/javascript">
-   $(document).ready(function() {
-  $('#summernote').summernote();
-});
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#summernote').summernote();
+    });
 </script>
 @endsection
-    
-
-

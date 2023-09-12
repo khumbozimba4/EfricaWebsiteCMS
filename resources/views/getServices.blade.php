@@ -1,6 +1,6 @@
 @extends('layout')
 
-<!-- resources/views/users.blade.php -->
+<!-- resources/views/services.blade.php -->
 @section('content')
 <div class="container">
 
@@ -28,15 +28,16 @@
           </div>
         </div>
       </nav>
-    <div class="row">
+    <div class="row" style="width: 100%">
        
-        <div class="col-md-9">
+        <div class="col-md-9" style="width: 100%">
             <h1>Services List</h1>
             <table class="table">
                 <thead>
                     <tr>
                         <th>Title</th>
                         <th>Description</th>
+                        <th>Actions</th> <!-- Add a new column for actions -->
                     </tr>
                 </thead>
                 <tbody>
@@ -44,6 +45,16 @@
                     <tr>
                         <td>{{ $service['title'] }}</td>
                         <td>{{ $service['description'] }}</td>
+                        <td>
+                            <div class="btn-group">
+                                <a href="{{ route('editService', ['title' => $service['title']]) }}" class="btn btn-warning">Edit</a>
+                                <form action="{{ route('Users', ['title' => $service['title']]) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
+                            </div>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>

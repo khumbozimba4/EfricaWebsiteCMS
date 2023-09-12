@@ -30,15 +30,15 @@
       </nav>
   
     <div>
-        <h2 class="mb-4">Dashboard</h2>
+        <h2 class="mb-4">Manage Settings</h2>
         
         <div class="col-md-12">
         <div class="row" style="margin-bottom: 20px;">
           <div class="col-md-6">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Users</h5>
-                    <p class="card-text">Manage system users <a href="{{ route('Users') }}">here</a>.</p>
+                    <h5 class="card-title"><a href="{{ route('getSettings') }}" class="btn btn-primary">View Settings</a></h5>
+                   
                 </div>
             </div>
           </div>
@@ -47,31 +47,13 @@
             <div class="col-md-6">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Services</h5>
-                    <p class="card-text">Manage system services <a href="{{ route('Services') }}">here</a>.</p>
+                    <h5 class="card-title"><a href="{{ route('addsetting') }}" class="btn btn-success">Add Settings</a></h5>
+                    
                 </div>
             </div>
             </div>
         </div>
-         <div class="row">
-        <div class="col-md-6">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Articles</h5>
-                    <p class="card-text">Manage system articles <a href="{{ route('Articles') }}">here</a>.</p>
-                </div>
-            </div>
-        </div>
-    
-        <div   class="col-md-6">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Settings</h5>
-                    <p class="card-text">Manage system settings <a href="{{ route('Settings') }}">here</a>.</p>
-                </div>
-            </div>
-        </div>
-    </div>
+        
     </div>
 </div>
 

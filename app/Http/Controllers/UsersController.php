@@ -9,6 +9,30 @@ use App\Http\Controllers\Controller;
 
 class UsersController extends Controller
 {
+    //handle users request from the dashboad
+     public static function manageUsers(){
+
+        return redirect()->route("Users");
+     }
+
+     public static function ViewmanageUsers(){
+
+        return view("Users");
+     }
+
+     //handle edit users requets 
+     public static function getEdituser()
+     {
+        return redirect()->route("editUser"); 
+     }
+
+     public static function VieweditUsers(){
+
+        return view("editUser");
+     }
+
+
+
 
     public static function GetUsers()
 {

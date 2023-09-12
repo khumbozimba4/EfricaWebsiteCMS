@@ -8,10 +8,32 @@ use App\Http\Controllers\Controller;
 
 class SettingsController extends Controller
 {
-    //
+    //hander users requets from the dashboard
+    public static function manageSettings(){
+
+        return redirect()->route("Settings");
+     }
+
+     public static function ViewmanageSettings(){
+
+        return view("Settings");
+     }
+    
+     // handle edit settings requests
+     public static function getEditsettings()
+     {
+        return redirect()->route("editSettings"); 
+     }
+
+     public static function VieweditSettings(){
+
+        return view("editSettings");
+     }
+
+    
+    // handle view user settings from the sidebar
     public static function getSettings()
 {
-    // Define the API endpoint URL
     $baseurl = 'https://efricaapi.malawinasheeds.com/api/v1/setting/getAllSettings';
 
     try {

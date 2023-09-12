@@ -38,8 +38,18 @@ Route::get('/users/adduser',[DashboardController::class,"adduser"])->name('addus
 Route::get('/articles/addarticle',[DashboardController::class,"addarticle"])->name('addarticle');
 Route::get('/services/addservice',[DashboardController::class,"addservice"])->name('addservice');
 Route::get('/sertings/addsetting',[DashboardController::class,"addsetting"])->name('addsetting');
+
 Route::get('/Users/getUsers', [UsersController::class,"getUsers"])->name('getUsers');
 Route::get('/Articles/getArticles', [ArticlesController::class,"getArticles"])->name('getArticles');
 Route::get('/Services/getServices', [ServicesController::class,"getServices"])->name('getServices');
 Route::get('/Settings/getSettings', [SettingsController::class,"getSettings"])->name('getSettings');
 
+Route::get('/Users/manageUsers', [UsersController::class,"ViewmanageUsers"])->name('Users');
+Route::get('/Articles/manageArticles', [ArticlesController::class,"ViewmanageArticles"])->name('Articles');
+Route::get('/Services/manageServices', [ServicesController::class,"ViewmanageServices"])->name('Services');
+Route::get('/Settings/manageSettings', [SettingsController::class,"ViewmanageSettings"])->name('Settings');
+
+Route::get('/Users/editUser', [UsersController::class,"VieweditUsers"])->name('editUser');
+Route::get('/Articles/editArticle', [ArticlesController::class,"VieweditArticle"])->name('editArticle');
+Route::get('/Services/editService', [ServicesController::class,"VieweditService"])->name('editService');
+Route::get('/Settings/editSettings', [SettingsController::class,"VieweditSettings"])->name('editSettings');

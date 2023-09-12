@@ -37,6 +37,7 @@
                     <tr>
                         <th>Title</Title></th>
                         <th>Content</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -44,6 +45,16 @@
                     <tr>
                         <td>{{ $article['title'] }}</td>
                         <td>{{ $article['content'] }}</td>
+                        <td>
+                            <div class="btn-group">
+                                <a href="{{ route('editArticle', ['title' => $article['title']]) }}" class="btn btn-warning">Edit</a>
+                                <form action="{{ route('Users', ['content' => $article['title']]) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
+                            </div>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>

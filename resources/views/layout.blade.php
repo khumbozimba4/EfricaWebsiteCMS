@@ -26,7 +26,7 @@
               <a href="#" class="img logo rounded-circle mb-5" style="background-image: url({{asset("sidebar/images/logo.jpg")}});"></a>
         <ul class="list-unstyled components mb-5">
             <li class="active">
-                <a href="#">Dashboard</a>
+                <a href="{{ route('dashboard') }}">Dashboard</a>
             </li>
           <li >
             <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">User Management</a>

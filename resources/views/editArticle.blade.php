@@ -34,9 +34,9 @@
         <div class="col-md-9">
             <div class="card"   style="background-color: rgb(255, 255, 255)">
                 <div class="card-body">
-                    <h4 class="card-header mb-4">Add new Article</h4>
+                    <h4 class="card-header mb-4">edit the Article</h4>
                     <!-- Add this code inside the card-body section -->
-                    <form action="{{ route('addArticle') }}" method="post" enctype="multipart/form-data">
+                    <form action="posteditArticle'" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="col form-group">
                             <label>Title:</label>
@@ -55,7 +55,7 @@
                             <input type="file" class="form-control" name="image" id="image" accept="image/*" required>
                         </div>
                         <div class="d-flex justify-content-end">
-                            <input class="btn btn-primary" type="submit" value="save">
+                            <input class="btn btn-primary" type="submit" value="edit">
                         </div>
                     </form>
                 </div>
